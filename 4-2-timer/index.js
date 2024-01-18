@@ -4,10 +4,10 @@ const time = process.argv[2];
 
 if(time){
     const ms = getTime(time);
-    console.log('Таймер запущен...');
+    console.log(`Таймер запущен на ${time}...` );
     setTimeout(() => {
         console.log('Таймер сработал!');
     }, ms);
 }else{
-    console.log("Введите время!");
+    console.warn("Введите время!");
 }

@@ -1,7 +1,8 @@
 import toMillisecond from "../to-millisecond/to-millisecond.js";
 
-const GetTime = (str) => {
+const getTime = (str) => {
     const timeArr = str.split(' ').map(el => el.match(/^(\d+)(h|m|s)$/));
+    if(!timeArr[0]) throw new SyntaxError("Данные некорректны!");
     const time = {
         'h': 0,
         'm': 0,
@@ -15,4 +16,4 @@ const GetTime = (str) => {
     return toMillisecond(time.h, time.m, time.s);
 }
 
-export default GetTime;
+export default getTime;
